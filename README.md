@@ -1,4 +1,4 @@
-# triggers
+# triggers-microservice
 Triggers for RoboDomo
 
 Triggers are events that occur that trigger actions in the home automation system.
