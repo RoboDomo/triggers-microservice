@@ -1,0 +1,34 @@
+{
+  "name": "triggers-microservice",
+  "version": "1.0.0",
+  "description": "Triggers microservice for RoboDomo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoboDomo/triggers-microservice.git"
+  },
+  "keywords": [
+    "RoboDomo",
+    "Home",
+    "Automation",
+    "Node.js",
+    "Docker",
+    "MQTT",
+    "JavaScript"
+  ],
+  "author": "Michael Schwartz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoboDomo/triggers-microservice/issues"
+  },
+  "homepage": "https://github.com/RoboDomo/triggers-microservice#readme",
+  "dependencies": {
+    "microservice-core": "github:robodomo/microservice-core",
+    "node-schedule": "^1.2.3",
+    "nodemailer": "^4.4.1",
+    "textbelt": "0.0.3"
+  }
+}
