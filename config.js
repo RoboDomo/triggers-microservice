@@ -14,6 +14,21 @@ module.exports = {
     },
     { topic: "smartthings/Back Room Fan", type: "fan", name: "Back Room Fan" },
     {
+      topic: "smartthings/Hall Bath Fan",
+      type: "switch",
+      name: "Hall Bath Fan"
+    },
+    {
+      topic: "smartthings/Hall Bath Lights",
+      type: "switch",
+      name: "Hall Bath Lights"
+    },
+    {
+      topic: "smartthings/Hall Bath Dimmer",
+      type: "dimmer",
+      name: "Hall Bath Dimmer"
+    },
+    {
       topic: "smartthings/Outdoor Lights",
       type: "fan",
       name: "Outdoor Lights"
@@ -34,6 +49,7 @@ module.exports = {
   rules: [
     { name: "Outdoor Lighting", cls: "OutdoorLighting" },
     { name: "Spa", cls: "Spa" },
-    { name: "Garage Doors", cls: "GarageDoor" }
+    { name: "Garage Doors", cls: "GarageDoor" },
+    { name: "Bathroom Fans", cls: "BathroomFans" }
   ]
 };
