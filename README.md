@@ -14,3 +14,6 @@ Examples:
 * Motion detected - turn on porch lights when motion is detected
 * Spa temperature reaches 90 degrees - send text message
 
+## Set up instructions
+Copy the gmail.js.template file to gmail.js and edit it to match your credentials.
+
