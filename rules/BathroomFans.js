@@ -13,7 +13,7 @@ const Rule = require("../lib/Rule"),
   console = require("console");
 
 //const TIMEOUT = 10 * 60 * 1000;
-const TIMEOUT = 10 * 1000;
+const TIMEOUT = Number(process.env.TIMEOUT) || 10 * 60 * 1000;
 
 class BathroomFans extends Rule {
   clear(name) {
