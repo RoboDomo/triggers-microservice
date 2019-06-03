@@ -89,7 +89,6 @@ class BathroomFans extends Rule {
       }
 
       fan.on("statechange", newState => {
-        console.log("newState", newState["switch"]);
         if (newState["switch"] === "on") {
           this.sw = "on";
         } else {

@@ -1,5 +1,5 @@
 module.exports = {
-  weather: "weather/92211/status/now",
+  weather: "weather/92211/status/observation",
   // the state of these things will be collected continuously:
   things: [
     {

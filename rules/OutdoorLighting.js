@@ -13,7 +13,7 @@ class OutdoorLighting extends Rule {
       this.assure(this.lights, "switch", "on");
     });
     schedule.on("sunrise", () => {
-      console.log("Outdoor Lighting", "sunset", "Outdoor Lights", "off");
+      console.log("Outdoor Lighting", "sunrise", "Outdoor Lights", "off");
       this.assure(this.lights, "switch", "off");
     });
   }
