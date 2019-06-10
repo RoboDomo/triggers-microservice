@@ -1,5 +1,4 @@
 const Rule = require("../lib/Rule"),
-  schedule = require("../lib/Schedule"),
   things = require("../lib/Things"),
   console = require("console");
 

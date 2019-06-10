@@ -8,11 +8,9 @@
  * if any other lights are on in the bathroom, the timeout is disabled.
  */
 const Rule = require("../lib/Rule"),
-  //  schedule = require("../lib/Schedule"),
   things = require("../lib/Things"),
   console = require("console");
 
-//const TIMEOUT = 10 * 60 * 1000;
 const TIMEOUT = Number(process.env.TIMEOUT) || 10 * 60 * 1000;
 
 class BathroomFans extends Rule {
