@@ -9,11 +9,23 @@ class OutdoorLighting extends Rule {
     super();
     this.lights = things["Outdoor Lights"];
     schedule.on("sunset", () => {
-      console.log("Outdoor Lighting", "sunset", "Outdoor Lights", "on");
+      console.log(
+        new Date().toLocaleDateString(),
+        "Outdoor Lighting",
+        "sunset",
+        "Outdoor Lights",
+        "on"
+      );
       this.assure(this.lights, "switch", "on");
     });
     schedule.on("sunrise", () => {
-      console.log("Outdoor Lighting", "sunrise", "Outdoor Lights", "off");
+      console.log(
+        new Date().toLocaleDateString(),
+        "Outdoor Lighting",
+        "sunrise",
+        "Outdoor Lights",
+        "off"
+      );
       this.assure(this.lights, "switch", "off");
     });
   }
