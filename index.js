@@ -1,9 +1,9 @@
-const Config = require("./config"),
-  schedule = require("./lib/Schedule"),
+const schedule = require("./lib/Schedule"),
   weather = require("./lib/Weather"),
-  things = require("./lib/Things"),
-  rules = require("./lib/Rules"),
   console = require("console");
+
+require("./lib/Things");
+require("./lib/Rules");
 
 function main() {
   schedule.on("each-minute", date => {
