@@ -52,7 +52,11 @@ class BathroomFans extends Rule {
     this.timeouts = {};
 
     // these are the fans that will be monitored
-    this.fans = [things["Hall Bath Fan"]];
+    this.fans = [
+      things["Hall Bath Fan"],
+      things["Bathroom Fan"],
+      things["Toilet Fan"]
+    ];
 
     // these are the switches in the bathroom(s) that will also be monitored
     this.switches = {
@@ -65,6 +69,40 @@ class BathroomFans extends Rule {
         {
           name: "Hall Bath Lights",
           sw: things["Hall Bath Lights"],
+          state: "off"
+        }
+      ],
+      "Bathroom Fan": [
+        {
+          name: "Bathroom Light",
+          sw: things["Bathroom Light"],
+          state: "off"
+        },
+        {
+          name: "Bathroom Switch",
+          sw: things["Bathroom Switch"],
+          state: "off"
+        },
+        {
+          name: "Closet Light",
+          sw: things["Closet Light"],
+          state: "off"
+        }
+      ],
+      "Toilet  Fan": [
+        {
+          name: "Bathroom Light",
+          sw: things["Bathroom Light"],
+          state: "off"
+        },
+        {
+          name: "Bathroom Switch",
+          sw: things["Bathroom Switch"],
+          state: "off"
+        },
+        {
+          name: "Closet Light",
+          sw: things["Closet Light"],
           state: "off"
         }
       ]
