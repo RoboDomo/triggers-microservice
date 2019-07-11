@@ -12,7 +12,6 @@ class Spa extends Rule {
 
   constructor() {
     super();
-    console.log("construct spa");
     this.thing = things["Autelis"];
     this.state = "off";
     this.monitor();
@@ -30,6 +29,7 @@ class Spa extends Rule {
         setpoint = Number(state.spasp);
 
       console.log(
+        new Date().toLocaleTimeString(),
         "spa monitor state ",
         this.state,
         "heat",

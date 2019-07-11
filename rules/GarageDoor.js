@@ -18,11 +18,15 @@ class GarageDoor extends Rule {
   constructor() {
     super();
     this.intervals = {};
-    console.log("construct GarageDoor");
     this.sensors = [things["Cart Door Sensor"], things["Garage Door Sensor"]];
     for (const sensor of this.sensors) {
       sensor.on("statechange", newState => {
-        console.log(sensor.name, "statechange", newState);
+        console.log(
+          new Date().toLocaleTimeString(),
+          sensor.name,
+          "statechange",
+          newState
+        );
         if (newState.contact !== "closed") {
           this.triggerOpen(sensor);
         } else {

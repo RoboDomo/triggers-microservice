@@ -10,7 +10,7 @@ class OutdoorLighting extends Rule {
     this.lights = things["Outdoor Lights"];
     schedule.on("sunset", () => {
       console.log(
-        new Date().toLocaleDateString(),
+        new Date().toLocaleTimeString(),
         "Outdoor Lighting",
         "sunset",
         "Outdoor Lights",
@@ -20,7 +20,7 @@ class OutdoorLighting extends Rule {
     });
     schedule.on("sunrise", () => {
       console.log(
-        new Date().toLocaleDateString(),
+        new Date().toLocaleTimeString(),
         "Outdoor Lighting",
         "sunrise",
         "Outdoor Lights",

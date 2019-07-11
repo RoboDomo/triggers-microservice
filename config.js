@@ -14,6 +14,31 @@ module.exports = {
     },
     { topic: "smartthings/Back Room Fan", type: "fan", name: "Back Room Fan" },
     {
+      topic: "smartthings/Bathroom Fan",
+      type: "switch",
+      name: "Bathroom Fan"
+    },
+    {
+      topic: "smartthings/Toilet Fan",
+      type: "switch",
+      name: "Toilet Fan"
+    },
+    {
+      topic: "smartthings/Closet Light",
+      type: "dimmer",
+      name: "Closet Light"
+    },
+    {
+      topic: "smartthings/Bathroom Light",
+      type: "dimmer",
+      name: "Bathroom Light"
+    },
+    {
+      topic: "smartthings/Bathroom Switch",
+      type: "switch",
+      name: "Bathroom Switch"
+    },
+    {
       topic: "smartthings/Hall Bath Fan",
       type: "switch",
       name: "Hall Bath Fan"
@@ -30,7 +55,7 @@ module.exports = {
     },
     {
       topic: "smartthings/Outdoor Lights",
-      type: "fan",
+      type: "switch",
       name: "Outdoor Lights"
     },
     {

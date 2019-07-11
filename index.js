@@ -7,16 +7,34 @@ require("./lib/Rules");
 
 function main() {
   schedule.on("each-minute", date => {
-    console.log("each-minute", date.toLocaleString());
+    console.log(
+      new Date().toLocaleTimeString(),
+      "each-minute",
+      date.toLocaleString()
+    );
   });
   schedule.on("each-hour", date => {
-    console.log("each-hour", date.toLocaleString());
+    console.log(
+      new Date().toLocaleTimeString(),
+      "each-hour",
+      date.toLocaleString()
+    );
   });
   schedule.on("sunrise", date => {
-    console.log("trigger sunrise", date, weather.sunrise.toLocaleString());
+    console.log(
+      new Date().toLocaleTimeString(),
+      "trigger sunrise",
+      date,
+      weather.sunrise.toLocaleString()
+    );
   });
   schedule.on("sunset", date => {
-    console.log("trigger sunset", date, weather.sunset.toLocaleString());
+    console.log(
+      new Date().toLocaleTimeString(),
+      "trigger sunset",
+      date,
+      weather.sunset.toLocaleString()
+    );
   });
 }
 

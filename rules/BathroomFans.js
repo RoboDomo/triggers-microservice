@@ -13,10 +13,17 @@ const Rule = require("../lib/Rule"),
 
 const TIMEOUT = Number(process.env.TIMEOUT) || 10 * 60 * 1000;
 
+const log = (...args) => {
+  const d = new Date();
+  console.log(d.toLocaleTimeString(), ...args);
+};
+
+log("TIMEOUT", TIMEOUT);
+
 class BathroomFans extends Rule {
   clear(name) {
-    console.log("clear", name);
     if (this.timeouts[name]) {
+      log(">>>>>> CLEAR", name);
       clearTimeout(this.timeouts[name]);
     }
     this.timeouts[name] = null;
@@ -24,24 +31,30 @@ class BathroomFans extends Rule {
 
   start(name) {
     try {
-      this.clear(name);
+      if (this.timeouts[name]) {
+        return;
+      }
       // don't start if fan switch is off
       if (this.sw !== "on") {
+        this.clear(name);
         return;
       }
       // don't start if other switch(es) on
       for (const sw of this.switches[name]) {
         if (sw.state === "on") {
+          this.clear(name);
           return;
         }
       }
-      console.log("START", name);
+      this.clear(name);
+      log(">>>>>>> START", name);
       this.timeouts[name] = setTimeout(() => {
         this.clear(name);
+        log("TIMEDOUT, assure", name, " is off");
         this.assure(name, "switch", "off");
       }, TIMEOUT);
     } catch (e) {
-      console.log("name", name, e);
+      log("name", name, e);
     }
   }
 
@@ -55,7 +68,8 @@ class BathroomFans extends Rule {
     this.fans = [
       things["Hall Bath Fan"],
       things["Bathroom Fan"],
-      things["Toilet Fan"]
+      things["Toilet Fan"],
+      things["Bathroom Light"]
     ];
 
     // these are the switches in the bathroom(s) that will also be monitored
@@ -89,12 +103,19 @@ class BathroomFans extends Rule {
           state: "off"
         }
       ],
-      "Toilet  Fan": [
+      "Bathroom Light": [
         {
-          name: "Bathroom Light",
-          sw: things["Bathroom Light"],
+          name: "Bathroom Switch",
+          sw: things["Bathroom Switch"],
           state: "off"
         },
+        {
+          name: "Closet Light",
+          sw: things["Closet Light"],
+          state: "off"
+        }
+      ],
+      "Toilet Fan": [
         {
           name: "Bathroom Switch",
           sw: things["Bathroom Switch"],
@@ -112,26 +133,35 @@ class BathroomFans extends Rule {
 
     for (const fan of this.fans) {
       // listen for other bathroom switches to monitor state
-      this.name = fan.name;
       for (const sw of this.switches[fan.name]) {
         sw.sw.on("statechange", newState => {
           sw.state = newState["switch"];
+          //          log(
+          //            "LIGHT statechange",
+          //            sw.name,
+          //            newState,
+          //            newState.switch,
+          //            sw.state
+          //          );
           if (sw.state === "on") {
-            this.clear(this.name);
+            log("statechange clear", fan.name);
+            this.clear(fan.name);
           } else {
-            this.start(this.name);
+            log("statechange start", fan.name);
+            this.start(fan.name);
           }
         });
       }
 
       fan.on("statechange", newState => {
+        log("FAN ", fan.name, "statechange", newState);
         if (newState["switch"] === "on") {
           this.sw = "on";
         } else {
           this.sw = "off";
         }
         // maybe start
-        this.start(this.name);
+        this.start(fan.name);
       });
     }
   }
