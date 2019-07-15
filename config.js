@@ -29,6 +29,11 @@ module.exports = {
       name: "Closet Light"
     },
     {
+      topic: "smartthings/Bathroom Sensor",
+      type: "motion",
+      name: "Bathroom Sensor"
+    },
+    {
       topic: "smartthings/Bathroom Light",
       type: "dimmer",
       name: "Bathroom Light"
@@ -75,6 +80,7 @@ module.exports = {
     { name: "Outdoor Lighting", cls: "OutdoorLighting" },
     { name: "Spa", cls: "Spa" },
     { name: "Garage Doors", cls: "GarageDoor" },
-    { name: "Bathroom Fans", cls: "BathroomFans" }
+    { name: "Bathroom Fans", cls: "BathroomFans" },
+    { name: "Motion Lights", cls: "MotionLights" }
   ]
 };

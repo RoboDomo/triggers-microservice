@@ -9,14 +9,9 @@
  */
 const Rule = require("../lib/Rule"),
   things = require("../lib/Things"),
-  console = require("console");
+  log = require("../lib/log");
 
 const TIMEOUT = Number(process.env.TIMEOUT) || 10 * 60 * 1000;
-
-const log = (...args) => {
-  const d = new Date();
-  console.log(d.toLocaleTimeString(), ...args);
-};
 
 log("TIMEOUT", TIMEOUT);
 
