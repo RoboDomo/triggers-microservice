@@ -17,3 +17,8 @@ Examples:
 ## Set up instructions
 Copy the gmail.js.template file to gmail.js and edit it to match your credentials.
 
+## TODO
+1) Monitor all smartthings so things don't have to be added to config
+2) Weather - today's high and low temperatures
+3) Autelis - monitor pumps, temps, set points
+
