@@ -57,7 +57,7 @@ class BathroomFans extends Rule {
       this.timeouts[name] = setTimeout(() => {
         this.clear(name);
         log("TIMEDOUT, assure", name, " is off");
-        this.assure(name, "switch", "off");
+        this.assure(name, "switch", "off", false);
       }, TIMEOUT);
     } catch (e) {
       log("name", name, e);
