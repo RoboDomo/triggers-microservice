@@ -3,18 +3,18 @@ module.exports = {
   // the state of these things will be collected continuously:
   things: [
     {
-      topic: "smartthings/Back Office Multisensor",
+      topic: "hubitat/Back Office Multisensor",
       type: "4-in-1",
       name: "Back Office Multisensor"
     },
     {
-      topic: "smartthings/Back Room Switch",
+      topic: "hubitat/Back Room Switch",
       type: "switch",
       name: "Back Room Switch"
     },
-    { topic: "smartthings/Back Room Fan", type: "fan", name: "Back Room Fan" },
+    { topic: "hubitat/Back Room Fan", type: "fan", name: "Back Room Fan" },
     {
-      topic: "smartthings/Bathroom Fan",
+      topic: "hubitat/Bathroom Fan",
       type: "switch",
       name: "Bathroom Fan"
     },
@@ -44,17 +44,17 @@ module.exports = {
       name: "Bathroom Switch"
     },
     {
-      topic: "smartthings/Hall Bath Fan",
+      topic: "hubitat/Hall Bath Fan",
       type: "switch",
       name: "Hall Bath Fan"
     },
     {
-      topic: "smartthings/Hall Bath Lights",
+      topic: "hubitat/Hall Bath Lights",
       type: "switch",
       name: "Hall Bath Lights"
     },
     {
-      topic: "smartthings/Hall Bath Dimmer",
+      topic: "hubitat/Hall Bath Dimmer",
       type: "dimmer",
       name: "Hall Bath Dimmer"
     },
