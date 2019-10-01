@@ -119,6 +119,11 @@ class BathroomFans extends Rule {
           name: "Closet Light",
           sw: things["Closet Light"],
           state: "off"
+        },
+        {
+          name: "Bathroom Fan",
+          sw: things["Bathroom Fan"],
+          state: "off"
         }
       ],
       "Toilet Fan": [
@@ -135,7 +140,7 @@ class BathroomFans extends Rule {
       ]
     };
 
-    for (const [name, thing] of this.things) {
+    for (const [, thing] of this.things) {
       // listen for other bathroom switches to monitor state
       for (const sw of this.switches[thing.name]) {
         sw.sw.on("statechange", newState => {

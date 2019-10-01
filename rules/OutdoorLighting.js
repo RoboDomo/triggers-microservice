@@ -31,4 +31,5 @@ class OutdoorLighting extends Rule {
   }
 }
 
+//
 module.exports = OutdoorLighting;

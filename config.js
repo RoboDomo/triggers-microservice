@@ -3,6 +3,16 @@ module.exports = {
   // the state of these things will be collected continuously:
   things: [
     {
+      topic: "hubitat/Cabinets Switch",
+      type: "switch",
+      name: "Cabinets Switch"
+    },
+    {
+      topic: "hubitat/Cabinet Controller",
+      type: "switch",
+      name: "Cabinet Controller"
+    },
+    {
       topic: "hubitat/Back Office Multisensor",
       type: "4-in-1",
       name: "Back Office Multisensor"
@@ -19,27 +29,27 @@ module.exports = {
       name: "Bathroom Fan"
     },
     {
-      topic: "smartthings/Toilet Fan",
+      topic: "hubitat/Toilet Fan",
       type: "switch",
       name: "Toilet Fan"
     },
     {
-      topic: "smartthings/Closet Light",
+      topic: "hubitat/Closet Light",
       type: "dimmer",
       name: "Closet Light"
     },
     {
-      topic: "smartthings/Bathroom Sensor",
+      topic: "hubitat/Bathroom Sensor",
       type: "motion",
       name: "Bathroom Sensor"
     },
     {
-      topic: "smartthings/Bathroom Light",
+      topic: "hubitat/Bathroom Light",
       type: "dimmer",
       name: "Bathroom Light"
     },
     {
-      topic: "smartthings/Bathroom Switch",
+      topic: "hubitat/Bathroom Switch",
       type: "switch",
       name: "Bathroom Switch"
     },
@@ -81,6 +91,7 @@ module.exports = {
     { name: "Spa", cls: "Spa" },
     { name: "Garage Doors", cls: "GarageDoor" },
     { name: "Bathroom Fans", cls: "BathroomFans" },
-    { name: "Motion Lights", cls: "MotionLights" }
+    { name: "Motion Lights", cls: "MotionLights" },
+    { name: "Buttons", cls: "Buttons" }
   ]
 };
