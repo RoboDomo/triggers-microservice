@@ -1,3 +1,4 @@
+process.env.DEBUG += ":OUTDOORS";
 const schedule = require("./lib/Schedule"),
   weather = require("./lib/Weather"),
   console = require("console");

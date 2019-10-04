@@ -13,14 +13,14 @@ const buttons = {
     value: "on",
     thing: things["Cabinet Controller"],
     actions: [
-      { key: "switch", value: "on" },
+      { key: "switch", value: "on" }
       //      { key: "setColorMode", value: "RGB" },
-      { key: "level", value: 91 },
-      { key: "hue", value: 84 },
-      { key: "red", value: 100 },
-      { key: "green", value: 0 },
-      { key: "blue", value: 100 },
-      { key: "saturation", value: 33 }
+      //      { key: "level", value: 91 },
+      //      { key: "hue", value: 84 },
+      //      { key: "red", value: 100 },
+      //      { key: "green", value: 0 },
+      //      { key: "blue", value: 100 },
+      //      { key: "saturation", value: 33 }
     ]
   }
   //  "Back Office Multisensor": {

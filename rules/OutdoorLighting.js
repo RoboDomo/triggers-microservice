@@ -2,16 +2,16 @@ const Rule = require("../lib/Rule"),
   schedule = require("../lib/Schedule"),
   //  weather = require("../lib/Weather"),
   things = require("../lib/Things"),
-  console = require("console");
+  debug = require("debug")("OUTDOOR");
 
 class OutdoorLighting extends Rule {
   constructor() {
     super();
     this.lights = things["Outdoor Lights"];
     schedule.on("sunset", () => {
-      console.log(
+      debug(
         new Date().toLocaleTimeString(),
-        "Outdoor Lighting",
+        ">>>>>>>>>>>>>>,s Outdoor Lighting",
         "sunset",
         "Outdoor Lights",
         "on"
@@ -19,9 +19,9 @@ class OutdoorLighting extends Rule {
       this.assure(this.lights, "switch", "on");
     });
     schedule.on("sunrise", () => {
-      console.log(
+      debug(
         new Date().toLocaleTimeString(),
-        "Outdoor Lighting",
+        ">>>>>>>>>>>>>>>> Outdoor Lighting",
         "sunrise",
         "Outdoor Lights",
         "off"
