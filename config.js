@@ -3,6 +3,46 @@ module.exports = {
   // the state of these things will be collected continuously:
   things: [
     {
+      topic: "autelis",
+      type: "pool",
+      name: "Autelis"
+    },
+    {
+      topic: "hubitat/Spa",
+      type: "switch",
+      name: "Spa"
+    },
+    {
+      topic: "hubitat/Spa Heat",
+      type: "switch",
+      name: "Spa Heat"
+    },
+    {
+      topic: "hubitat/Jets",
+      type: "switch",
+      name: "Jets"
+    },
+    {
+      topic: "hubitat/Cleaner Pump",
+      type: "switch",
+      name: "Cleaner Pump"
+    },
+    {
+      topic: "hubitat/Waterfall",
+      type: "switch",
+      name: "Waterfall"
+    },
+    {
+      topic: "bravia/sony-810c",
+      type: "switch",
+      name: "Sony 810c"
+    },
+    {
+      topic: "hubitat/Office TV",
+      type: "switch",
+      name: "Office TV"
+    },
+    {
       topic: "hubitat/Cabinets Switch",
       type: "switch",
       name: "Cabinets Switch"
@@ -92,6 +132,7 @@ module.exports = {
     { name: "Garage Doors", cls: "GarageDoor" },
     { name: "Bathroom Fans", cls: "BathroomFans" },
     { name: "Motion Lights", cls: "MotionLights" },
-    { name: "Buttons", cls: "Buttons" }
+    { name: "Buttons", cls: "Buttons" },
+    { name: "Virtual Devices", cls: "VirtualDevices" }
   ]
 };

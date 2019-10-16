@@ -71,7 +71,7 @@ class Buttons extends Rule {
               t.change(String(action.key), String(action.value));
               t.change(String(action.key), String(action.value));
               //            await this.assure(bt, action.key, action.value);
-              await this.wait(1000);
+              await this.wait(2000);
             }
           }
         }

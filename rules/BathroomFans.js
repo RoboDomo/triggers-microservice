@@ -39,7 +39,7 @@ class BathroomFans extends Rule {
       // don't start if related switch(es) on
       for (const sw of this.switches[name]) {
         //        console.log("sw", sw.name, sw.state);
-        if (sw.state === "on") {
+        if (sw.state === "on" || sw.state === "active") {
           // one of the related switches is on, so we don't want to do a timer/timeout on it
           this.clear(name);
           return;
@@ -124,6 +124,11 @@ class BathroomFans extends Rule {
           name: "Bathroom Fan",
           sw: things["Bathroom Fan"],
           state: "off"
+        },
+        {
+          name: "Bathroom Sensor",
+          sw: things["Bathroom Sensor"],
+          state: "inactive"
         }
       ],
       "Toilet Fan": [
