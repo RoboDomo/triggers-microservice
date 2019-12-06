@@ -8,7 +8,7 @@ class OutdoorLighting extends Rule {
   constructor() {
     super();
     this.lights = things["Outdoor Lights"];
-    schedule.on("sunset", () => {
+    schedule.on("sunset", async () => {
       debug(
         new Date().toLocaleTimeString(),
         ">>>>>>>>>>>>>>,s Outdoor Lighting",
@@ -16,9 +16,15 @@ class OutdoorLighting extends Rule {
         "Outdoor Lights",
         "on"
       );
-      this.assure(this.lights, "switch", "on");
+      const t = this.lights;
+      t.change("switch", "on");
+      await this.wait(1000);
+      t.change("switch", "on");
+      await this.wait(1000);
+      t.change("switch", "on");
+//      this.assure(this.lights, "switch", "on");
     });
-    schedule.on("sunrise", () => {
+    schedule.on("sunrise", async () => {
       debug(
         new Date().toLocaleTimeString(),
         ">>>>>>>>>>>>>>>> Outdoor Lighting",
@@ -26,7 +32,14 @@ class OutdoorLighting extends Rule {
         "Outdoor Lights",
         "off"
       );
-      this.assure(this.lights, "switch", "off");
+      const t = this.lights;
+      t.change("switch", "off");
+      await this.wait(1000);
+      t.change("switch", "off");
+      await this.wait(1000);
+      t.change("switch", "off");
+//      this.assure(this.lights, "switch", "off");
+//      this.assure(this.lights, "switch", "off");
     });
   }
 }
