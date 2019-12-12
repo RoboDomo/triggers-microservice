@@ -28,17 +28,17 @@ class Spa extends Rule {
             : Number(state.pooltemp),
         setpoint = Number(state.spasp);
 
-      console.log(
-        new Date().toLocaleTimeString(),
-        "spa monitor state ",
-        this.state,
-        "heat",
-        heat,
-        "temp",
-        temp,
-        "setpoint",
-        setpoint
-      );
+//      console.log(
+//        new Date().toLocaleTimeString(),
+//        "spa monitor state ",
+//        this.state,
+//        "heat",
+//        heat,
+//        "temp",
+//        temp,
+//        "setpoint",
+//        setpoint
+//      );
       switch (this.state) {
         case "off":
           if (this.isOn()) {
@@ -50,17 +50,26 @@ class Spa extends Rule {
             this.state = "heating";
             this.timer = 5; // give it 5 minutes to have the spa temperature be accurate
           }
+          else if (!this.isOn()) {
+            this.state= "off";
+          }
           break;
         case "heating":
           if (--this.timer <= 0 && temp >= 90) {
             this.state = "warm";
             this.notify("Spa is " + temp + " degrees");
           }
+          else if (!this.isOn()) {
+            this.state= "off";
+          }
           break;
         case "warm":
           if (temp >= setpoint) {
             this.notify("Spa set point reached: " + temp + " degrees");
             this.state = "heated";
+          }
+          else if (!this.isOn()) {
+            this.state= "off";
           }
           break;
         case "heated":
