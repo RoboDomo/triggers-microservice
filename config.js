@@ -109,7 +109,7 @@ module.exports = {
       name: "Hall Bath Dimmer"
     },
     {
-      topic: "smartthings/Outdoor Lights",
+      topic: "hubitat/Outdoor Lights",
       type: "switch",
       name: "Outdoor Lights"
     },
