@@ -7,35 +7,51 @@ require("./lib/Things");
 require("./lib/Rules");
 
 function main() {
-  schedule.on("each-minute", date => {
-    console.log(
-      new Date().toLocaleTimeString(),
-      "each-minute",
-      date.toLocaleString()
-    );
+  schedule.on("each-minute", (date) => {
+    try {
+      console.log(
+        new Date().toLocaleTimeString(),
+        "each-minute",
+        date.toLocaleString()
+      );
+    } catch (e) {
+      console.log("Exception ", e.message, "date", date);
+    }
   });
-  schedule.on("each-hour", date => {
-    console.log(
-      new Date().toLocaleTimeString(),
-      "each-hour",
-      date.toLocaleString()
-    );
+  schedule.on("each-hour", (date) => {
+    try {
+      console.log(
+        new Date().toLocaleTimeString(),
+        "each-hour",
+        date.toLocaleString()
+      );
+    } catch (e) {
+      console.log("Exception ", e.message, "date", date);
+    }
   });
-  schedule.on("sunrise", date => {
-    console.log(
-      new Date().toLocaleTimeString(),
-      "trigger sunrise",
-      date,
-      weather.sunrise.toLocaleString()
-    );
+  schedule.on("sunrise", (date) => {
+    try {
+      console.log(
+        new Date().toLocaleTimeString(),
+        "trigger sunrise",
+        date,
+        weather.sunrise.toLocaleString()
+      );
+    } catch (e) {
+      console.log("Exception ", e.message, "weather", weather);
+    }
   });
-  schedule.on("sunset", date => {
-    console.log(
-      new Date().toLocaleTimeString(),
-      "trigger sunset",
-      date,
-      weather.sunset.toLocaleString()
-    );
+  schedule.on("sunset", (date) => {
+    try {
+      console.log(
+        new Date().toLocaleTimeString(),
+        "trigger sunset",
+        date,
+        weather.sunset.toLocaleString()
+      );
+    } catch (e) {
+      console.log("Exception ", e.message, "weather", weather);
+    }
   });
 }
 
