@@ -9,27 +9,34 @@ class OutdoorLighting extends Rule {
     super();
     this.lights = things["Outdoor Lights"];
     this.sunset = false;
-    schedule.on('each-minute', async () => {
+    schedule.on("each-minute", async () => {
       const t = this.lights;
+
       if (this.sunset) {
-        t.change("switch", "on");
-        await this.wait(1000);
-        t.change("switch", "on");
-        await this.wait(1000);
-        t.change("switch", "on");
-        await this.wait(1000);
-        t.change("switch", "on");
+        console.log("lights sunset", t.state);
+        if (t.state.switch !== "on") {
+          t.change("switch", "on");
+        }
+        // await this.wait(1000);
+        // t.change("switch", "on");
+        // await this.wait(1000);
+        // t.change("switch", "on");
+        // await this.wait(1000);
+        // t.change("switch", "on");
+      } else {
+        console.log("lights sunrise", t.state);
+        if (t.state.switch !== "off") {
+          t.change("switch", "off");
+        }
+        // await this.wait(1000);
+        // t.change("switch", "off");
+        // await this.wait(1000);
+        // t.change("switch", "off");
+        // await this.wait(1000);
+        // t.change("switch", "off");
       }
-      else {
-        t.change("switch", "off");
-        await this.wait(1000);
-        t.change("switch", "off");
-        await this.wait(1000);
-        t.change("switch", "off");
-        await this.wait(1000);
-        t.change("switch", "off");
-      }
-    })
+    });
+
     schedule.on("sunset", async () => {
       this.sunset = true;
       debug(
@@ -41,11 +48,11 @@ class OutdoorLighting extends Rule {
       );
       const t = this.lights;
       t.change("switch", "on");
-      await this.wait(1000);
-      t.change("switch", "on");
-      await this.wait(1000);
-      t.change("switch", "on");
-//      this.assure(this.lights, "switch", "on");
+      // await this.wait(1000);
+      // t.change("switch", "on");
+      // await this.wait(1000);
+      // t.change("switch", "on");
+      //      this.assure(this.lights, "switch", "on");
     });
     schedule.on("sunrise", async () => {
       this.sunset = false;
@@ -58,12 +65,12 @@ class OutdoorLighting extends Rule {
       );
       const t = this.lights;
       t.change("switch", "off");
-      await this.wait(1000);
-      t.change("switch", "off");
-      await this.wait(1000);
-      t.change("switch", "off");
-//      this.assure(this.lights, "switch", "off");
-//      this.assure(this.lights, "switch", "off");
+      // await this.wait(1000);
+      // t.change("switch", "off");
+      // await this.wait(1000);
+      // t.change("switch", "off");
+      //      this.assure(this.lights, "switch", "off");
+      //      this.assure(this.lights, "switch", "off");
     });
   }
 }
