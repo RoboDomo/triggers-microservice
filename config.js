@@ -114,6 +114,11 @@ module.exports = {
       name: "Outdoor Lights"
     },
     {
+      topic: "hubitat/Office Lock",
+      type: "switch",
+      name: "Office Lock"
+    },
+    {
       topic: "myq/Cart Door",
       type: "door",
       name: "Cart Door"
@@ -130,9 +135,10 @@ module.exports = {
     { name: "Outdoor Lighting", cls: "OutdoorLighting" },
     { name: "Spa", cls: "Spa" },
     { name: "Garage Doors", cls: "GarageDoor" },
+    { name: "Locks", cls: "Lock" },
     { name: "Bathroom Fans", cls: "BathroomFans" },
     { name: "Motion Lights", cls: "MotionLights" },
     { name: "Buttons", cls: "Buttons" },
-    { name: "Virtual Devices", cls: "VirtualDevices" }
+    { name: "Virtual Devices", cls: "VirtualDevices" },
   ]
 };

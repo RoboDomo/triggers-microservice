@@ -55,8 +55,9 @@ class GarageDoor extends Rule {
         clearInterval(this.intervals[sensor.name]);
         this.intervals[sensor.name] = null;
       }
-    }, 15 * 60 * 1000); // every 15 minutes
+    }, 10 * 60 * 1000); // every 15 minutes
   }
 }
 
+//
 module.exports = GarageDoor;
