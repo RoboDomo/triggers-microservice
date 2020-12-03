@@ -114,14 +114,14 @@ module.exports = {
       name: "Outdoor Lights"
     },
     {
-      topic: "smartthings/Cart Door Sensor",
+      topic: "myq/Cart Door",
       type: "door",
-      name: "Cart Door Sensor"
+      name: "Cart Door"
     },
     {
-      topic: "smartthings/Garage Door Sensor",
+      topic: "myq/Garage Door",
       type: "door",
-      name: "Garage Door Sensor"
+      name: "Garage Door"
     },
     { topic: "autelis/status", type: "autelis", name: "Autelis" }
   ],

@@ -5,7 +5,7 @@ const Rule = require("../lib/Rule"),
 class GarageDoor extends Rule {
   isOpen() {
     for (const sensor of this.sensors) {
-      if (sensor.state.contact !== "closed") {
+      if (sensor.state.door_state === "open") {
         return true;
       }
     }
@@ -18,18 +18,18 @@ class GarageDoor extends Rule {
   constructor() {
     super();
     this.intervals = {};
-    this.sensors = [things["Cart Door Sensor"], things["Garage Door Sensor"]];
+    this.sensors = [things["Cart Door"], things["Garage Door"]];
     for (const sensor of this.sensors) {
-      sensor.on("statechange", newState => {
-        console.log(
-          new Date().toLocaleTimeString(),
-          sensor.name,
-          "statechange",
-          newState
-        );
-        if (newState.contact !== "closed") {
+      sensor.on("statechange", (newState) => {
+        //        console.log(
+        //          new Date().toLocaleTimeString(),
+        //          sensor.name,
+        //          "statechange",
+        //          newState
+        //        );
+        if (newState.door_state === "open") {
           this.triggerOpen(sensor);
-        } else {
+        } else if (newState.door_state === "closed") {
           if (this.intervals[sensor.name]) {
             this.say(this.sensorName(sensor.name) + " is now closed");
             if (!this.isOpen()) {
@@ -50,7 +50,7 @@ class GarageDoor extends Rule {
     this.intervals[sensor.name] = setInterval(() => {
       if (this.isOpen()) {
         this.say(this.sensorName(sensor.name) + " is open");
-        this.notify(this.sensorName(sensor.name) + " is open");
+        //        this.notify(this.sensorName(sensor.name) + " is open");
       } else {
         clearInterval(this.intervals[sensor.name]);
         this.intervals[sensor.name] = null;
