@@ -4,7 +4,7 @@
   "description": "Triggers microservice for RoboDomo",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon ./index.js",
+    "start": "./node_modules/.bin/forever --watch ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
