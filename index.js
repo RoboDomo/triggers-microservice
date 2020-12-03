@@ -1,4 +1,6 @@
 process.env.DEBUG += ":OUTDOORS";
+process.title = process.env.TITLE || "triggers-microservice";
+
 const schedule = require("./lib/Schedule"),
   weather = require("./lib/Weather"),
   console = require("console");
