@@ -14,7 +14,7 @@ class Lock extends Rule {
 
   constructor() {
     super();
-    this.intervals = {};
+//    this.intervals = {};
     this.locks = [things["Office Lock"]];
     for (const lock of this.locks) {
       lock.on("statechange", (newState) => {

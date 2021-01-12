@@ -31,7 +31,7 @@
     "forever": "^3.0.4",
     "microservice-core": "github:robodomo/microservice-core",
     "node-schedule": "^1.3.2",
-    "nodemailer": "^6.4.16",
+    "nodemailer": "^6.4.17",
     "nodemon": "^2.0.6",
     "textbelt": "0.0.4"
   }
