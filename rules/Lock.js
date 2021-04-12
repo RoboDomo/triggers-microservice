@@ -14,21 +14,25 @@ class Lock extends Rule {
 
   constructor() {
     super();
-//    this.intervals = {};
+    //    this.intervals = {};
+    this.lastLocked = "";
     this.locks = [things["Office Lock"]];
     for (const lock of this.locks) {
-      lock.on("statechange", (newState) => {
+      lock.on("statechange", newState => {
         console.log(
           new Date().toLocaleTimeString(),
           lock.name,
           "statechange",
           newState
         );
-        if (newState.lock === "unlocked") {
-          this.triggerUnlocked(lock);
-        } else if (newState.lock === "locked") {
-          this.triggerLocked(lock);
+        if (newState.lock !== this.lastLocked) {
+          if (newState.lock === "unlocked") {
+            this.triggerUnlocked(lock);
+          } else if (newState.lock === "locked") {
+            this.triggerLocked(lock);
+          }
         }
+        this.lastLocked = newState.lock;
       });
     }
   }
