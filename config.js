@@ -3,6 +3,11 @@ module.exports = {
   // the state of these things will be collected continuously:
   things: [
     {
+      topic: "denon/denon-x6700h",
+      type: "avr",
+      name: "Theater AVR"
+    },
+    {
       topic: "autelis",
       type: "pool",
       name: "Autelis"
@@ -133,6 +138,7 @@ module.exports = {
   alarms: [],
   rules: [
     { name: "Outdoor Lighting", cls: "OutdoorLighting" },
+    { name: "Denon Atmos", cls: "Atmos" },
     { name: "Spa", cls: "Spa" },
     { name: "Garage Doors", cls: "GarageDoor" },
     { name: "Locks", cls: "Lock" },
