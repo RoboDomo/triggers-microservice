@@ -45,7 +45,7 @@ class Atmos extends Rule {
             console.log("statechange", this.ms, newState.MS, oldState.MS);
             if (newState.MS.toUpperCase() === ATMOS) {
               console.log("new state ATMOS");
-              this.publish(vol_topic + "MV60", "MV60");
+              this.publish(vol_topic + "MV55", "MV55");
             } else {
               console.log("new state NOT ATMOS", oldState.MS.toUpperCase());
               if (oldState.MS.toUpperCase() === ATMOS) {
